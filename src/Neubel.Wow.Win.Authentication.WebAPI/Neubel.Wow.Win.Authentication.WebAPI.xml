@@ -1,0 +1,536 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Neubel.Wow.Win.Authentication.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.OrganizationController.Get">
+            <summary>
+            Get all organization.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.OrganizationController.Get(System.Int32)">
+            <summary>
+            Get organization by organization Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.OrganizationController.Post(Neubel.Wow.Win.Authentication.WebAPI.DTO.Organization)">
+            <summary>
+            Add new organization
+            </summary>
+            <param name="organization"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.OrganizationController.Put(System.Int32,Neubel.Wow.Win.Authentication.WebAPI.DTO.Organization)">
+            <summary>
+            Update existing organization by organization id
+            </summary>
+            <param name="id"></param>
+            <param name="organization"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.OrganizationController.Delete(System.Int32)">
+            <summary>
+            Delete an organization (soft delete).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.RoleController.Get">
+            <summary>
+            Get all roles.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.RoleController.Get(System.Int32)">
+            <summary>
+            Get role by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.RoleController.Post(Neubel.Wow.Win.Authentication.WebAPI.DTO.Role)">
+            <summary>
+            Add a new role.
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.RoleController.Put(System.Int32,Neubel.Wow.Win.Authentication.WebAPI.DTO.Role)">
+            <summary>
+            update and existing role.
+            </summary>
+            <param name="id"></param>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Delete a role (Soft delete).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.Token(Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest)">
+            <summary>
+            Get the access and refresh token after authentication.
+            </summary>
+            <param name="loginRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.RefreshToken">
+            <summary>
+            Refresh a access token using refresh token.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.ForgotPassword(Neubel.Wow.Win.Authentication.Core.Model.ForgotPassword)">
+            <summary>
+            Forget password.
+            </summary>
+            <param name="forgotPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.ChangePassword(Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword)">
+            <summary>
+            Change passsword.
+            </summary>
+            <param name="changedPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.SendOTP(System.String)">
+            <summary>
+            Send Otp.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.ValidateOtp(System.String,System.String)">
+            <summary>
+            Validate or match otp.
+            </summary>
+            <param name="userName"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.ConfirmMobile(System.String,System.String)">
+            <summary>
+            Confirm Mobile.
+            </summary>
+            <param name="userName"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.ConfirmEmail(System.String,System.String)">
+            <summary>
+            Confirm email.
+            </summary>
+            <param name="userName"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.LoginHistory(System.Int32)">
+            <summary>
+            Login history.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.Lock(System.String)">
+            <summary>
+            Lock user.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityController.UnLock(System.String)">
+            <summary>
+            Unlock user.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityParameterController.Get">
+            <summary>
+            Get all security parameters/password policies.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityParameterController.Get(System.Int32)">
+            <summary>
+            Get a security parameters/password policy by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityParameterController.Post(Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter)">
+            <summary>
+            Add a security parameters/password policy.
+            </summary>
+            <param name="securityParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityParameterController.Put(System.Int32,Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter)">
+            <summary>
+            Update security parameters/password policy.
+            </summary>
+            <param name="id"></param>
+            <param name="securityParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.SecurityParameterController.Delete(System.Int32)">
+            <summary>
+            Delete a security parameters/password policy (soft delete).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Get">
+            <summary>
+            Get all users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Get user by Id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Post(Neubel.Wow.Win.Authentication.WebAPI.DTO.User)">
+            <summary>
+            Add a new user.
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Put(System.Int32,Neubel.Wow.Win.Authentication.WebAPI.DTO.User)">
+            <summary>
+            Update an existing user by Id.
+            </summary>
+            <param name="id"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Delete an user(soft delete).
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Activate(System.String)">
+            <summary>
+            Activate user by username.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Neubel.Wow.Win.Authentication.WebAPI.Controllers.UserController.Deactivate(System.String)">
+            <summary>
+            Deactivate user by user name.
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword">
+            <summary>
+            Change password details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword.CurrentPassword">
+            <summary>
+            Current Password
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword.NewPassword">
+            <summary>
+            New Password
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ChangedPassword.ConfirmPassword">
+            <summary>
+            Confirm Password
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.ForgotPassword">
+            <summary>
+            Forgot Password 
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ForgotPassword.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ForgotPassword.otp">
+            <summary>
+            OTP
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ForgotPassword.NewPassword">
+            <summary>
+            New Password
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.ForgotPassword.ConfirmPassword">
+            <summary>
+            Confirm Password
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest">
+            <summary>
+            Login request details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.IpAddress">
+            <summary>
+            IpAddress
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.Browser">
+            <summary>
+            Browser
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.DeviceCode">
+            <summary>
+            Device Code
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginRequest.DeviceName">
+            <summary>
+            Device Name
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginToken">
+            <summary>
+            User token details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginToken.AccessToken">
+            <summary>
+            Access Token.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginToken.AccessTokenExpiry">
+            <summary>
+            Access Token Expiry.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginToken.RefreshToken">
+            <summary>
+            Refresh Token.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.LoginToken.RefreshTokenExpiry">
+            <summary>
+            Refresh Token Expiry.
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.Organization">
+            <summary>
+            Organization details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.Organization.OrgCode">
+            <summary>
+            Organization Code.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.Organization.OrgName">
+            <summary>
+            Organization Name.
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.RefreshedAccessToken">
+            <summary>
+            Refreshed Access Token
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.RefreshedAccessToken.AccessToken">
+            <summary>
+            Access Token.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.RefreshedAccessToken.AccessTokenExpiry">
+            <summary>
+            Access Token Expiry.
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.Role">
+            <summary>
+            Roles details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.Role.Name">
+            <summary>
+            Role Name.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.Role.Level">
+            <summary>
+            Tole level.
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter">
+            <summary>
+            Security parameters details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.MinCaps">
+            <summary>
+            Minimum capital letters allowed.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.MinSmallChars">
+            <summary>
+            Minimum small charectors allowed.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.MinSpecialChars">
+            <summary>
+            Minimum special charactors allowed.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.MinNumber">
+            <summary>
+            Minimum numbers allowed.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.MinLength">
+            <summary>
+            Minimum length of password.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.AllowUserName">
+            <summary>
+            Allow user name.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.DisAllPastPassword">
+            <summary>
+            Disallow past password.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.DisAllowedChars">
+            <summary>
+            Disallowed charectors.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.ChangeIntervalDays">
+            <summary>
+            Password change interval date.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.SecurityParameter.OrgId">
+            <summary>
+            Organization id.
+            </summary>
+        </member>
+        <member name="T:Neubel.Wow.Win.Authentication.WebAPI.DTO.User">
+            <summary>
+            User details.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.UserName">
+            <summary>
+            User Name.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.FirstName">
+            <summary>
+            First Name.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.LastName">
+            <summary>
+            Last Name.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.Email">
+            <summary>
+            Email Address.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.Mobile">
+            <summary>
+            Mobile.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.ISDCode">
+            <summary>
+            IsdCode.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.TwoFactor">
+            <summary>
+            TwoFactor is enabled or not.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.Locked">
+            <summary>
+            Account locked or not.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.IsActive">
+            <summary>
+            Is Active.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.EmailValidationStatus">
+            <summary>
+            Email Validation Status
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.MobileValidationStatus">
+            <summary>
+            Mobile Validation Status
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.OrgId">
+            <summary>
+            Organization Id.
+            </summary>
+        </member>
+        <member name="P:Neubel.Wow.Win.Authentication.WebAPI.DTO.User.AdminLevel">
+            <summary>
+            Admin Level.
+            </summary>
+        </member>
+    </members>
+</doc>

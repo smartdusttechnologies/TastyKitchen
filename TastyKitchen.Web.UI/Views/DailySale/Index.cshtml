@@ -1,0 +1,83 @@
+﻿@model IEnumerable<TastyKitchen.Web.UI.Models.DailySale>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>&nbsp;&nbsp;Daily Sales</h2>
+<p>
+    &nbsp;&nbsp;<a asp-action="Create">Add Sale</a>
+</p>
+
+@*<h2>Daily Sale</h2>*@
+<!--<p style="background-color:white;">
+    <a href="~/DailySale/Create">-->
+@*<i class="fa fa-dashboard"></i>*@
+<!--Add Daily Sale</a>
+</p>-->
+<div style="margin-left:5px;">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SaleType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaleType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+            }
+            @using (Html.BeginForm("Index", "DailySale", new { pageIndex = @ViewBag.PreviousPage }, FormMethod.Post))
+            {
+                <button class="btn-primary">Previous</button>
+            }
+            @using (Html.BeginForm("Index", "DailySale", new { pageIndex = @ViewBag.nextPage }, FormMethod.Post))
+            {
+                <button class="btn-primary">Next</button>
+            }
+        </tbody>
+    </table>
+    @using (Html.BeginForm("ExportToExcel", "DailySale", FormMethod.Get))
+    {
+        <button class="btn btn-link">Export To Excel</button>
+    }
+    <fieldset style="margin-top: 15px">
+        <legend>Upload the Online Order Excel</legend>
+        <form method="post" asp-action="ImportFromExcel" asp-controller="DailySale" enctype="multipart/form-data">
+            <input type="file" name="file" class="btn-primary" style="margin-left:5px;">
+            <input type="submit" value="Upload" class="btn-primary" style="margin-left:5px;"/>
+        </form>
+    </fieldset>
+
+    <fieldset style="margin-top: 15px">
+        <legend>Upload the daily sales reports</legend>
+        <form method="post" asp-action="ImportDailySale" asp-controller="DailySale" enctype="multipart/form-data">
+            <input type="file" name="files" class="btn-primary" style="margin-left:5px;" multiple>
+            <input type="submit" value="Upload" class="btn-primary" style="margin-left:5px;"   />
+        </form>
+    </fieldset>
+</div>

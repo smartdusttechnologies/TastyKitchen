@@ -1,0 +1,46 @@
+﻿@model TastyKitchen.Web.UI.Models.DailyExpense
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>&nbsp;&nbsp;Details</h2>
+<div>
+    <h4>&nbsp;&nbsp;Daily Expense</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+    </dl>
+</div>
+<div>
+    &nbsp;&nbsp;<a asp-action="Edit" asp-route-id="@Model.Id" class="btn-primary">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>    

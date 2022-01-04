@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-west-2",
+    "configuration" : "Debug",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "IdentityManagerApi",
+    "environment"    : "IdentityManagerApi-dev",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.1.4 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "identitymanagerapi-dev",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "IdentityManagerApiKeyPair",
+    "instance-profile"     : "aws-elasticbeanstalk-IdentityManagerApi-dev",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

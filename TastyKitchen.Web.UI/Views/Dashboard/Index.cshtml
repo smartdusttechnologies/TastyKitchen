@@ -1,0 +1,1109 @@
+﻿<!--@{
+//ViewBag.Title = "Home Page";
+}
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<div class="jumbotron" style="background-image: url('../../MyApp1/Image/woodBackground1.jpg')">-->
+@*<div>*@
+@*<h1>R-NETWORKS</h1>*@
+<!--<p style="color: sandybrown; font-size:xx-large">
+
+    <span>-->
+@*<img src= url('../../Image/logo.png') width="70" height="70" />*@
+<!--</span> &nbsp;&nbsp;Welcome to <b>Tasty Kitchen</b> Dashboard
+</p>-->
+@*<p><a href="http://gtrl.org.in/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+
+@*<button onclick="lineChart()" title="Display Chart" value="Display Chart" class="btn btn-primary btn-lg">Dashboard</button>*@
+
+<!--</div>-->
+@*<div class="row">*@
+@*<div class="col-md-4">*@
+@*<h2>Getting started</h2>*@
+@*<p>
+        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+        enables a clean separation of concerns and gives you full control over markup
+        for enjoyable, agile development.
+    </p>*@
+@*<p><a class="btn btn-default" href="http://gtrl.org.in/">Learn more &raquo;</a></p>*@
+@*</div>*@
+@*<div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a*@ @*class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+        @*</div>*@
+
+        <!--<table align="center">-->
+        @*<tbody style="width: 2000px; height: 2000px">*@
+        <!--<tr>
+            <th style="width:500px;"></th>
+            <th style="width: 500px;"></th>
+            <th style="width: 500px;"></th>
+        </tr>
+        <tr>
+            <td>
+                <br /><br /><br />
+                <div id="lineChart"></div>
+            </td>
+            <td>
+                <div id="donutChart"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br /><br />
+                <div id="barChart"></div>
+            </td>
+            <td>
+                <br />
+                <div id="heatMapChart"></div>
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                <div id="chart-year"></div>
+            </td>
+            <td>
+                <div id="chart-quarter"></div>
+            </td>
+
+        </tr>-->
+        @*</tbody>*@
+        <!--</table>-->
+        @*</div>*@
+        <!--<script type="text/javascript">
+        //function lineChart() {
+            var lineOptions = {
+                chart: {
+                    type: 'line'
+                },
+                series: [
+                    {
+                        name: 'sales',
+                        data: [49, 60, 70, 91, 125]
+                    }
+                ],
+                title: {
+                    text: 'Turnover Trend',
+                    offsetX: 15
+                },
+                xaxis: {
+                    categories: [2018, 2019, 2020, 2021, 2022]
+                }
+            }
+            donutOptions = {
+                chart: {
+                    type: 'donut'
+                },
+                series: [44, 55, 13, 33],
+                labels: ['Rent', 'Employee Salary', 'Food material', 'Ambiance'],
+                title: {
+                    text: 'Expense Breakdown',
+                    offsetX: 15
+                }
+            }
+            var lineChart = new ApexCharts(document.querySelector("#lineChart"), lineOptions);
+            var donutChart = new ApexCharts(document.querySelector("#donutChart"), donutOptions);
+            lineChart.render();
+            donutChart.render();
+                var barOptions = {
+                    $.ajax({
+                        url: 'DailySale\GetMonthSaleByDate',
+                        //data: { id: id }
+                    }).done(function (response) {
+                        alert('Added');
+                    });
+                chart: {
+                    type: 'bar'
+                },
+                series: [
+                    {
+                        name: 'sales',
+                        data: [49, 60, 70, 91, 125]
+                    }
+                ],
+                title: {
+                    text: 'Annual sales',
+                    offsetX: 15
+                },
+                xaxis: {
+                    categories: [2018, 2019, 2020, 2021, 2022]
+                }
+            }
+            var barChart = new ApexCharts(document.querySelector('#barChart'), barOptions);
+            barChart.render();
+            heatMapoptions = {
+                chart: {
+                    type: 'heatmap'
+                },
+                title: {
+                    text: 'Monthly Sales',
+                    offsetX: 15
+                },
+                plotOptions: {
+                    heatmap: {
+                        colorScale: {
+                            ranges: [{
+                                    from: -30,
+                                    to: 5,
+                                    color: '#FF0000',
+                                    name: 'low',
+                                },
+                                {
+                                    from: 6,
+                                    to: 20,
+                                    color: '#128FD9',
+                                    name: 'medium',
+                                },
+                                {
+                                    from: 21,
+                                    to: 45,
+                                    color: '#00A100',
+                                    name: 'high',
+                                }
+                            ]
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: "1st Month",
+                        data: [{
+                            x: 'Q1',
+                            y: 22
+                        }, {
+                            x: 'Q2',
+                            y: 29
+                        }, {
+                            x: 'Q3',
+                            y: 13
+                        }, {
+                            x: 'Q4',
+                            y: 32
+                        }]
+                    },
+                    {
+                        name: "2nd Month",
+                        data: [
+                            {
+                                x: 'Q1',
+                                y: 6
+                            }, {
+                                x: 'Q2',
+                                y: 4
+                            }, {
+                                x: 'Q3',
+                                y: 20
+                            }, {
+                                x: 'Q4',
+                                y: 0
+                            }]
+
+                    },
+                    {
+                        name: "3rd Month",
+                        data: [{
+                            x: 'Q1',
+                            y: 43
+                        }, {
+                            x: 'Q2',
+                            y: 43
+                        }, {
+                            x: 'Q3',
+                            y: 43
+                        }, {
+                            x: 'Q4',
+                            y: 43
+                        }]
+                    }
+                ]
+            }
+            var heatMapChart = new ApexCharts(document.querySelector('#heatMapChart'), heatMapoptions);
+            heatMapChart.render();
+            // drill down
+            Apex = {
+                chart: {
+                    toolbar: {
+                        show: false
+                    }
+                },
+                tooltip: {
+                    shared: false
+                },
+                legend: {
+                    show: false
+                }
+            }
+            var colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#00D9E9', '#FF66C3'];
+            /**
+             * Randomize array element order in-place.
+             * Using Durstenfeld shuffle algorithm.
+             */
+            function shuffleArray(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array;
+            }
+            var arrayData = [{
+                y: 400,
+                quarters: [{
+                    x: 'Q1',
+                    y: 120
+                }, {
+                    x: 'Q2',
+                    y: 90
+                }, {
+                    x: 'Q3',
+                    y: 100
+                }, {
+                    x: 'Q4',
+                    y: 90
+                }]
+            }, {
+                y: 430,
+                quarters: [{
+                    x: 'Q1',
+                    y: 120
+                }, {
+                    x: 'Q2',
+                    y: 110
+                }, {
+                    x: 'Q3',
+                    y: 90
+                }, {
+                    x: 'Q4',
+                    y: 110
+                }]
+            }, {
+                y: 448,
+                quarters: [{
+                    x: 'Q1',
+                    y: 70
+                }, {
+                    x: 'Q2',
+                    y: 100
+                }, {
+                    x: 'Q3',
+                    y: 140
+                }, {
+                    x: 'Q4',
+                    y: 138
+                }]
+            }, {
+                y: 470,
+                quarters: [{
+                    x: 'Q1',
+                    y: 150
+                }, {
+                    x: 'Q2',
+                    y: 60
+                }, {
+                    x: 'Q3',
+                    y: 190
+                }, {
+                    x: 'Q4',
+                    y: 70
+                }]
+            }, {
+                y: 540,
+                quarters: [{
+                    x: 'Q1',
+                    y: 120
+                }, {
+                    x: 'Q2',
+                    y: 120
+                }, {
+                    x: 'Q3',
+                    y: 130
+                }, {
+                    x: 'Q4',
+                    y: 170
+                }]
+            }, {
+                y: 580,
+                quarters: [{
+                    x: 'Q1',
+                    y: 170
+                }, {
+                    x: 'Q2',
+                    y: 130
+                }, {
+                    x: 'Q3',
+                    y: 120
+                }, {
+                    x: 'Q4',
+                    y: 160
+                }]
+            }];
+            function makeData() {
+                var dataSet = shuffleArray(arrayData)
+                var dataYearSeries = [{
+                    x: "2018",
+                    y: dataSet[1].y,
+                    color: colors[1],
+                    quarters: dataSet[1].quarters
+                }, {
+                    x: "2019",
+                    y: dataSet[2].y,
+                    color: colors[2],
+                    quarters: dataSet[2].quarters
+                }, {
+                    x: "2020",
+                    y: dataSet[3].y,
+                    color: colors[3],
+                    quarters: dataSet[3].quarters
+                }, {
+                    x: "2021",
+                    y: dataSet[4].y,
+                    color: colors[4],
+                    quarters: dataSet[4].quarters
+                }, {
+                    x: "2022",
+                    y: dataSet[5].y,
+                    color: colors[5],
+                    quarters: dataSet[5].quarters
+                }];
+                return dataYearSeries
+            }
+            function updateQuarterChart(sourceChart, destChartIDToUpdate) {
+                var series = [];
+                var seriesIndex = 0;
+                var colors = []
+                if (sourceChart.w.globals.selectedDataPoints[0]) {
+                    var selectedPoints = sourceChart.w.globals.selectedDataPoints;
+                    for (var i = 0; i < selectedPoints[seriesIndex].length; i++) {
+                        var selectedIndex = selectedPoints[seriesIndex][i];
+                        var yearSeries = sourceChart.w.config.series[seriesIndex];
+                        series.push({
+                            name: yearSeries.data[selectedIndex].x,
+                            data: yearSeries.data[selectedIndex].quarters
+                        })
+                        colors.push(yearSeries.data[selectedIndex].color)
+                    }
+                    if (series.length === 0) series = [{
+                        data: []
+                    }]
+                    return ApexCharts.exec(destChartIDToUpdate, 'updateOptions', {
+                        series: series,
+                        colors: colors,
+                        fill: {
+                            colors: colors
+                        }
+                    })
+                }
+            }
+
+            var Drilloptions = {
+                series: [{
+                    data: makeData()
+                }],
+                chart: {
+                    id: 'barYear',
+                    height: 250,
+                    width: '80%',
+                    type: 'bar',
+                    events: {
+                        dataPointSelection: function (e, chart, opts) {
+                            var quarterChartEl = document.querySelector("#chart-quarter");
+                            var yearChartEl = document.querySelector("#chart-year");
+                            if (opts.selectedDataPoints[0].length === 1) {
+                                if (quarterChartEl.classList.contains("active")) {
+                                    updateQuarterChart(chart, 'barQuarter')
+                                } else {
+                                    yearChartEl.classList.add("chart-quarter-activated")
+                                    quarterChartEl.classList.add("active");
+                                    updateQuarterChart(chart, 'barQuarter')
+                                }
+                            } else {
+                                updateQuarterChart(chart, 'barQuarter')
+                            }
+                            if (opts.selectedDataPoints[0].length === 0) {
+                                yearChartEl.classList.remove("chart-quarter-activated")
+                                quarterChartEl.classList.remove("active");
+                            }
+                        },
+                        updated: function (chart) {
+                            updateQuarterChart(chart, 'barQuarter')
+                        }
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        distributed: true,
+                        horizontal: true,
+                        barHeight: '75%',
+                        dataLabels: {
+                            position: 'bottom'
+                        }
+                    }
+                },
+                dataLabels: {
+                    enabled: true,
+                    textAnchor: 'start',
+                    style: {
+                        colors: ['#fff']
+                    },
+                    formatter: function (val, opt) {
+                        return opt.w.globals.labels[opt.dataPointIndex]
+                    },
+                    offsetX: 0,
+                    dropShadow: {
+                        enabled: true
+                    }
+                },
+                colors: colors,
+                states: {
+                    normal: {
+                        filter: {
+                            type: 'desaturate'
+                        }
+                    },
+                    active: {
+                        allowMultipleDataPointsSelection: true,
+                        filter: {
+                            type: 'darken',
+                            value: 1
+                        }
+                    }
+                },
+                tooltip: {
+                    x: {
+                        show: false
+                    },
+                    y: {
+                        title: {
+                            formatter: function (val, opts) {
+                                return opts.w.globals.labels[opts.dataPointIndex]
+                            }
+                        }
+                    }
+                },
+                title: {
+                    text: 'Yearly Results',
+                    offsetX: 15
+                },
+                subtitle: {
+                    text: '(Click on bar to see details)',
+                    offsetX: 15
+                },
+                yaxis: {
+                    labels: {
+                        show: false
+                    }
+                }
+            };
+            var chart = new ApexCharts(document.querySelector("#chart-year"), Drilloptions);
+            chart.render();
+            var optionsQuarter = {
+                series: [{
+                    data: []
+                }],
+                chart: {
+                    id: 'barQuarter',
+                    height: 250,
+                    width: '100%',
+                    type: 'bar',
+                    stacked: true
+                },
+                plotOptions: {
+                    bar: {
+                        columnWidth: '50%',
+                        horizontal: false
+                    }
+                },
+                legend: {
+                    show: false
+                },
+                grid: {
+                    yaxis: {
+                        lines: {
+                            show: false,
+                        }
+                    },
+                    xaxis: {
+                        lines: {
+                            show: true,
+                        }
+                    }
+                },
+                yaxis: {
+                    labels: {
+                        show: false
+                    }
+                },
+                title: {
+                    text: 'Quarterly Results',
+                    offsetX: 10
+                },
+                tooltip: {
+                    x: {
+                        formatter: function (val, opts) {
+                            return opts.w.globals.seriesNames[opts.seriesIndex]
+                        }
+                    },
+                    y: {
+                        title: {
+                            formatter: function (val, opts) {
+                                return opts.w.globals.labels[opts.dataPointIndex]
+                            }
+                        }
+                    }
+                }
+            };
+            var chartQuarter = new ApexCharts(document.querySelector("#chart-quarter"), optionsQuarter);
+            chartQuarter.render();
+            chart.addEventListener('dataPointSelection', function (e, chart, opts) {
+                var quarterChartEl = document.querySelector("#chart-quarter");
+                var yearChartEl = document.querySelector("#chart-year");
+                if (opts.selectedDataPoints[0].length === 1) {
+                    if (quarterChartEl.classList.contains("active")) {
+                        updateQuarterChart(chart, 'barQuarter')
+                    }
+                    else {
+                        yearChartEl.classList.add("chart-quarter-activated")
+                        quarterChartEl.classList.add("active");
+                        updateQuarterChart(chart, 'barQuarter')
+                    }
+                } else {
+                    updateQuarterChart(chart, 'barQuarter')
+                }
+                if (opts.selectedDataPoints[0].length === 0) {
+                    yearChartEl.classList.remove("chart-quarter-activated")
+                    quarterChartEl.classList.remove("active");
+                }
+            })
+            chart.addEventListener('updated', function (chart) {
+                updateQuarterChart(chart, 'barQuarter')
+            })
+            document.querySelector("#model").addEventListener("change", function (e) {
+                chart.updateSeries([{
+                    data: makeData()
+                }])
+            })
+        //}
+            </script>-->
+        @model TastyKitchen.Web.UI.Models.DashboardViewModel
+
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Control panel</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>@Model.TotalNoOfOrders</h3>
+                            <p>Total orders in Month</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>@Model.TotalSaleAmount<sup style="font-size: 20px"></sup></h3>
+                            <p>Total Sale in Month</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>@Model.AverageOrderAmountPerOrder</h3>
+                            <p>Average Order Amount</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>@Model.TotalExpenseAmount</h3>
+                            <p>Total Expense in Month</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Sale Vs Expense</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+                    <!-- TO DO List -->
+                    <div class="box box-primary">
+                        <div class="box-header">
+                            <i class="ion ion-clipboard"></i>
+                            <h3 class="box-title">To Do List</h3>
+                            <div class="box-tools pull-right">
+                                <ul class="pagination pagination-sm inline">
+                                    <li><a href="#">«</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+                            <ul class="todo-list">
+                                <li>
+                                    <!-- drag handle -->
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <!-- checkbox -->
+                                    <input type="checkbox" value="">
+                                    <!-- todo text -->
+                                    <span class="text">Order Paneer, chicken and Vagetables</span>
+                                    <!-- Emphasis label -->
+                                    <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                                    <!-- General tools such as edit or delete-->
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Send Feedback link to customers.</span>
+                                    <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Update Zomato & Swiggy Online Order excel</span>
+                                    <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Gas Cyliner Availability</span>
+                                    <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Update Expense excel</span>
+                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                        <i class="fa fa-ellipsis-v"></i>
+                                    </span>
+                                    <input type="checkbox" value="">
+                                    <span class="text">Copy yesterday bills</span>
+                                    <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+                                    <div class="tools">
+                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-trash-o"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer clearfix no-border">
+                            <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+                </section>
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Top 30 Dishes in demand w.r.t Amount</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="bar-color-chart-top-dish-amount" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <section class="col-lg-5 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Top 30 Dishes in demand w.r.t Quantity</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="bar-color-chart-top-dish-quantity" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Area Chart</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="area-chart" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+
+                <section class="col-lg-5 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Stacked Bar Chart</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="stacked-bar-chart" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">line chart resize</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="line-chart-resize" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <section class="col-lg-5 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">area as line chart</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="area-as-Line-chart" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <!-- DONUT CHART -->
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">bar color chart</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body chart-responsive">
+                            <div class="chart" id="pie-chart" style="height: 300px; position: relative;"></div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </section>
+                <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+        </section>
+        <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+        </section>
+        <!-- Morris.js charts -->
+        @*<script src="~/bower_components/raphael/raphael.min.js"></script>*@
+        <script src="~/dist/js/raphael.min.js"></script>
+        <script src="~/dist/js/morris.min.js"></script>
+        <script>
+  $(function () {
+    "use strict";
+    //DONUT CHART
+    var donut = new Morris.Donut({
+      element: 'sales-chart',
+      resize: true,
+      colors: /*["#3c8dbc",*/[ "#f56954", "#00a65a"],
+      data: [
+        /*{label: "Registered Doctors", value:100},*/
+          { label: "Last Month expense", value: @Model.TotalExpenseAmount},
+          { label: "Last Month Sale", value: @Model.TotalSaleAmount}
+        ],
+        hideHover: 'auto'
+    });
+
+      var bar = new Morris.Bar({
+          element: 'pie-chart',
+          data: [
+              { x: '2011 Q1', y: 3, z: 2, a: 3 },
+              { x: '2011 Q2', y: 2, z: null, a: 1 },
+              { x: '2011 Q3', y: 0, z: 2, a: 4 },
+              { x: '2011 Q4', y: 2, z: 4, a: 3 }
+          ],
+          xkey: 'x',
+          ykeys: ['y', 'z', 'a'],
+          labels: ['Y', 'Z', 'A']
+      }).on('click', function (i, row) {
+          console.log(i, row);
+      });
+      // Use Morris.Area instead of Morris.Line
+     var area = new  Morris.Area({
+          element: 'area-chart',
+          data: [
+              { x: '2010 Q4', y: 3, z: 7 },
+              { x: '2011 Q1', y: 3, z: 4 },
+              { x: '2011 Q2', y: null, z: 1 },
+              { x: '2011 Q3', y: 2, z: 5 },
+              { x: '2011 Q4', y: 8, z: 2 },
+              { x: '2012 Q1', y: 4, z: 4 }
+          ],
+          xkey: 'x',
+          ykeys: ['y', 'z'],
+          labels: ['Y', 'Z']
+      }).on('click', function (i, row) {
+          console.log(i, row);
+      });
+      var stackedBarChart = new Morris.Bar({
+          element: 'stacked-bar-chart',
+          data: [
+              { x: '2011 Q1', y: 3, z: 2, a: 3 },
+              { x: '2011 Q2', y: 2, z: null, a: 1 },
+              { x: '2011 Q3', y: 0, z: 2, a: 4 },
+              { x: '2011 Q4', y: 2, z: 4, a: 3 }
+          ],
+          xkey: 'x',
+          ykeys: ['y', 'z', 'a'],
+          labels: ['Y', 'Z', 'A'],
+          stacked: true
+      });
+      var day_data = [
+          { "period": "2012-10-01", "licensed": 3407, "sorned": 660 },
+          { "period": "2012-09-30", "licensed": 3351, "sorned": 629 },
+          { "period": "2012-09-29", "licensed": 3269, "sorned": 618 },
+          { "period": "2012-09-20", "licensed": 3246, "sorned": 661 },
+          { "period": "2012-09-19", "licensed": 3257, "sorned": 667 },
+          { "period": "2012-09-18", "licensed": 3248, "sorned": 627 },
+          { "period": "2012-09-17", "licensed": 3171, "sorned": 660 },
+          { "period": "2012-09-16", "licensed": 3171, "sorned": 676 },
+          { "period": "2012-09-15", "licensed": 3201, "sorned": 656 },
+          { "period": "2012-09-10", "licensed": 3215, "sorned": 622 }
+      ];
+      var line = new Morris.Line({
+          element: 'line-chart-resize',
+          data: day_data,
+          xkey: 'period',
+          ykeys: ['licensed', 'sorned'],
+          labels: ['Licensed', 'SORN'],
+          resize: true
+      });
+      var areaAsLine = new Morris.Area({
+          element: 'area-as-Line-chart',
+          behaveLikeLine: true,
+          data: [
+              { x: '2011 Q1', y: 3, z: 3 },
+              { x: '2011 Q2', y: 2, z: 1 },
+              { x: '2011 Q3', y: 2, z: 4 },
+              { x: '2011 Q4', y: 3, z: 3 }
+          ],
+          xkey: 'x',
+          ykeys: ['y', 'z'],
+          labels: ['Y', 'Z']
+      });
+      var barColore = new Morris.Bar({
+          element: 'bar-color-chart-top-dish-amount',
+          data: @Html.Raw(Json.Serialize(Model.MenuItemWiseTotalSaleByAmountDTO)),
+          //data: [
+          //    { x: '2011 Q1', y: 0 },
+          //    { x: '2011 Q2', y: 1 },
+          //    { x: '2011 Q3', y: 2 },
+          //    { x: '2011 Q4', y: 3 },
+          //    { x: '2012 Q1', y: 4 },
+          //    { x: '2012 Q2', y: 5 },
+          //    { x: '2012 Q3', y: 6 },
+          //    { x: '2012 Q4', y: 7 },
+          //    { x: '2013 Q1', y: 8 }
+          //],
+          xkey: 'name',
+          ykeys: ['totalAmount'],
+          labels: ['Y'],
+          barColors: function (row, series, type) {
+              if (type === 'bar') {
+                  var red = Math.ceil(255 * row.y / this.ymax);
+                  return 'rgb(' + red + ',0,0)';
+              }
+              else {
+                  return '#000';
+              }
+          }
+      });
+      var barColore = new Morris.Bar({
+          element: 'bar-color-chart-top-dish-quantity',
+          data: @Html.Raw(Json.Serialize(Model.MenuItemWiseTotalSaleByQuantityDTO)),
+          //data: [
+          //    { x: '2011 Q1', y: 0 },
+          //    { x: '2011 Q2', y: 1 },
+          //    { x: '2011 Q3', y: 2 },
+          //    { x: '2011 Q4', y: 3 },
+          //    { x: '2012 Q1', y: 4 },
+          //    { x: '2012 Q2', y: 5 },
+          //    { x: '2012 Q3', y: 6 },
+          //    { x: '2012 Q4', y: 7 },
+          //    { x: '2013 Q1', y: 8 }
+          //],
+          xkey: 'name',
+          ykeys: ['totalQuantity'],
+          labels: ['Y'],
+          barColors: function (row, series, type) {
+              if (type === 'bar') {
+                  var red = Math.ceil(255 * row.y / this.ymax);
+                  return 'rgb(' + red + ',0,0)';
+              }
+              else {
+                  return '#000';
+              }
+          }
+      });
+  });
+        </script>

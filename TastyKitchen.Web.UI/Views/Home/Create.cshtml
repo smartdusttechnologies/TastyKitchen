@@ -1,0 +1,62 @@
+﻿@model TastyKitchen.Web.UI.Models.DailyExpense
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>&nbsp;&nbsp;Add</h2>
+<h4>&nbsp;&nbsp;Daily Expense</h4>
+<hr />
+<div class="row" style="margin-left:5px;">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit" class="control-label"></label>
+                <select asp-for="Unit" class="form-control">
+                    <option value="">-- Select Measurement Unit --</option>
+                    <option value="Kg">Kg</option>
+                    <option value="Ltr">Ltr</option>
+                    <option value="Pcs">Pcs</option>
+                    <option value="Gm">Gm</option>
+                    <option value="Creat">Creat</option>
+                    <option value="Crtn">Crtn</option>
+                    <option value="M">M</option>
+                    <option value="Pct">Pct</option>
+                    <option value="Patta">Patta</option>
+                    <option value="Ml">Ml</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">&nbsp;&nbsp;Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}    

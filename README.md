@@ -1,1 +1,2 @@
-# TastyKitchen
+# IdentityManager
+Identity Manager Solution
